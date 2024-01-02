@@ -1,0 +1,254 @@
+[
+    {
+        "name": "Designer Polo Shirt",
+        "description": "Elegant designer polo shirt with embroidered logo.",
+        "price": "250000",
+        "stock": 50,
+        "imgUrl": "https://example.com/poloshirt1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Premium Hoodie",
+        "description": "High-quality and warm hoodie with a modern design.",
+        "price": "350000",
+        "stock": 30,
+        "imgUrl": "https://example.com/hoodie1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Stylish Blouse",
+        "description": "Chic and trendy blouse for a fashionable look.",
+        "price": "200000",
+        "stock": 80,
+        "imgUrl": "https://example.com/blouse1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Fashionable Sweater",
+        "description": "Fashion-forward sweater for a cozy and stylish winter.",
+        "price": "300000",
+        "stock": 40,
+        "imgUrl": "https://example.com/sweater1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Premium Jeans",
+        "description": "High-quality branded jeans for a classic and comfortable look.",
+        "price": "400000",
+        "stock": 60,
+        "imgUrl": "https://example.com/jeans1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Designer Chinos",
+        "description": "Elegant designer chinos with a modern fit.",
+        "price": "300000",
+        "stock": 45,
+        "imgUrl": "https://example.com/chinos1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Casual Shorts",
+        "description": "Comfortable and casual shorts for a laid-back style.",
+        "price": "150000",
+        "stock": 70,
+        "imgUrl": "https://example.com/shorts1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Trendy Skirt",
+        "description": "Trendy and fashionable skirt for a chic appearance.",
+        "price": "250000",
+        "stock": 35,
+        "imgUrl": "https://example.com/skirt1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Sporty Joggers",
+        "description": "Comfortable and sporty joggers for an active lifestyle.",
+        "price": "200000",
+        "stock": 55,
+        "imgUrl": "https://example.com/joggers1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Formal Blazer",
+        "description": "Elegant formal blazer for a sophisticated look.",
+        "price": "500000",
+        "stock": 25,
+        "imgUrl": "https://example.com/blazer1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Denim Jacket",
+        "description": "Stylish denim jacket for a cool and casual appearance.",
+        "price": "350000",
+        "stock": 40,
+        "imgUrl": "https://example.com/jacket1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Cropped Pants",
+        "description": "Trendy cropped pants for a modern and fashionable look.",
+        "price": "280000",
+        "stock": 35,
+        "imgUrl": "https://example.com/croppedpants1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Classic Pleated Skirt",
+        "description": "Classic pleated skirt for a timeless and elegant style.",
+        "price": "320000",
+        "stock": 30,
+        "imgUrl": "https://example.com/pleatedskirt1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Leather Jacket",
+        "description": "Edgy leather jacket for a bold and stylish statement.",
+        "price": "600000",
+        "stock": 20,
+        "imgUrl": "https://example.com/leatherjacket1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Casual Jogger Pants",
+        "description": "Comfortable and casual jogger pants for a relaxed day out.",
+        "price": "220000",
+        "stock": 50,
+        "imgUrl": "https://example.com/joggerpants1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Chic Pencil Skirt",
+        "description": "Chic pencil skirt for a polished and professional look.",
+        "price": "280000",
+        "stock": 25,
+        "imgUrl": "https://example.com/pencilskirt1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "Striped Shirt",
+        "description": "Classic striped shirt for a timeless and versatile wardrobe.",
+        "price": "180000",
+        "stock": 60,
+        "imgUrl": "https://example.com/stripedshirt1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+    },
+    {
+        "name": "Cargo Pants",
+        "description": "Functional cargo pants for a utilitarian and stylish look.",
+        "price": "250000",
+        "stock": 40,
+        "imgUrl": "https://example.com/cargopants1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+    },
+    {
+        "name": "V-Neck Sweater",
+        "description": "Versatile V-neck sweater for a classic and comfortable style.",
+        "price": "280000",
+        "stock": 35,
+        "imgUrl": "https://example.com/vnecksweater1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+      },
+      {
+        "name": "Cargo Shorts",
+        "description": "Stylish cargo shorts for a casual and functional look.",
+        "price": "200000",
+        "stock": 45,
+        "imgUrl": "https://example.com/cargoshorts1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+      },
+      {
+        "name": "Printed Blouse",
+        "description": "Chic printed blouse for a trendy and fashionable appearance.",
+        "price": "220000",
+        "stock": 30,
+        "imgUrl": "https://example.com/printedblouse1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+      },
+      {
+        "name": "Slim Fit Jeans",
+        "description": "Modern slim fit jeans for a sleek and stylish silhouette.",
+        "price": "320000",
+        "stock": 25,
+        "imgUrl": "https://example.com/slimfitjeans1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+      },
+      {
+        "name": "Pullover Hoodie",
+        "description": "Comfortable pullover hoodie for a laid-back and cozy look.",
+        "price": "300000",
+        "stock": 40,
+        "imgUrl": "https://example.com/pulloverhoodie1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+      },
+      {
+        "name": "A-Line Skirt",
+        "description": "Flattering A-line skirt for a feminine and graceful style.",
+        "price": "250000",
+        "stock": 35,
+        "imgUrl": "https://example.com/alineskirt1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+      },
+      {
+        "name": "Printed T-Shirt",
+        "description": "Casual printed T-shirt for a fun and expressive look.",
+        "price": "180000",
+        "stock": 50,
+        "imgUrl": "https://example.com/printedtshirt1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+      },
+      {
+        "name": "Wide Leg Pants",
+        "description": "On-trend wide leg pants for a bold and fashion-forward appearance.",
+        "price": "350000",
+        "stock": 30,
+        "imgUrl": "https://example.com/widelegpants1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+      },
+      {
+        "name": "Casual Denim Shirt",
+        "description": "Relaxed and casual denim shirt for a laid-back vibe.",
+        "price": "200000",
+        "stock": 60,
+        "imgUrl": "https://example.com/denimshirt1.jpg",
+        "categoryId": 1,
+        "authorId": 1
+      },
+      {
+        "name": "Cropped Jogger Pants",
+        "description": "Trendy cropped jogger pants for a modern and athletic style.",
+        "price": "220000",
+        "stock": 40,
+        "imgUrl": "https://example.com/croppedjoggers1.jpg",
+        "categoryId": 2,
+        "authorId": 1
+      }
+]
