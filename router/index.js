@@ -2,17 +2,21 @@ const router = require('express').Router();
 const CategoriesControllers = require('../controllers/category');
 const ProductsControllers = require('../controllers/product');
 const UsersControllers = require('../controllers/user');
+const authentication = require('../middlewares/authentication');
 const errorHandler = require('../middlewares/errorHandler');
 
 router.get('/', (req, res) => res.json({message: "Buat Server Branded Things"}));
 
-//User
-router.post('/add-user', UsersControllers.AddUser)
-router.post('/login', UsersControllers.Login)
 
 //Public
 router.get('/pub/products', ProductsControllers.ReadProductsPub)
 router.get('/pub/products/:id', ProductsControllers.ReadProductsByIdPub)
+
+
+//User
+router.post('/login', UsersControllers.Login)
+router.use(authentication)
+router.post('/add-user', UsersControllers.AddUser)
 
 //Entitas Utama
 router.post('/products', ProductsControllers.CreateProducts)

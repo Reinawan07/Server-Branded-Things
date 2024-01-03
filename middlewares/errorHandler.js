@@ -13,6 +13,11 @@ function errorHandler(error, req, res, next) {
              message = "Invalid email/password";
             break;
 
+        case "Unauthenticated":
+            statusCode = 401
+             message = "Unauthenticated";
+            break;
+
         case "NotFound":
             statusCode = 404
             message = error.message ?? "Data Not Found";
