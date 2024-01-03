@@ -19,6 +19,7 @@ router.put('/categories/:id', CategoriesControllers.UpdateCategories)
 
 //Public
 router.get('/pub/products', ProductsControllers.ReadProductsPub)
+router.get('/pub/products/:id', ProductsControllers.ReadProductsByIdPub)
 
 router.use(errorHandler)
 module.exports = router;

@@ -70,11 +70,11 @@ Target:
   - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama.
   - [x] Jika request gagal, kembalikan response dengan 500 status code.
 
-- [ ] Mengambil detail entitas utama berdasar id (Read / GET) untuk public site
-  - [ ] Tambahkan prefix /pub pada endpoint kalian
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data.
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
+- [x] Mengambil detail entitas utama berdasar id (Read / GET) untuk public site
+  - [x] Tambahkan prefix /pub pada endpoint kalian
+  - [x] Id dikirimkan via request params
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data.
+  - [x] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
 
 ### **API Documentation**
 

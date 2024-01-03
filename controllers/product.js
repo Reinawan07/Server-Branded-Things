@@ -24,7 +24,7 @@ class ProductsControllers {
         try {
             const data = await Product.findByPk(req.params.id);
             if (!data) {
-                throw ({ name: "NotFound", message: 'Product not found' })
+                throw ({ name: "NotFound", message: `Product id ${req.params.id} not found` })
             }
             res.status(200).json(data);
         } catch (error) {
@@ -58,10 +58,22 @@ class ProductsControllers {
         }
     }
 
-// Controller public
+    // Controller public
     static async ReadProductsPub(req, res, next) {
         try {
             const data = await Product.findAll();
+            res.status(200).json(data);
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async ReadProductsByIdPub(req, res, next) {
+        try {
+            const data = await Product.findByPk(req.params.id);
+            if (!data) {
+                throw ({ name: "NotFound", message: `Product id ${req.params.id} not found` })
+            }
             res.status(200).json(data);
         } catch (error) {
             next(error)
