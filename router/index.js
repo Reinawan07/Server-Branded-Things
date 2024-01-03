@@ -8,6 +8,7 @@ router.get('/', (req, res) => res.json({message: "Buat Server Branded Things"}))
 
 //User
 router.post('/add-user', UsersControllers.AddUser)
+router.post('/login', UsersControllers.Login)
 
 //Public
 router.get('/pub/products', ProductsControllers.ReadProductsPub)

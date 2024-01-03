@@ -8,14 +8,19 @@ function errorHandler(error, req, res, next) {
              message = error.errors[0]?.message || "Email already exists";
             break;
 
+        case "Invalid email/password":
+            statusCode = 401
+             message = "Invalid email/password";
+            break;
+
         case "NotFound":
             statusCode = 404
-            message = error.message ?? "Data Not Found"
+            message = error.message ?? "Data Not Found";
             break;
 
         default:
             statusCode = 500;
-            message = "Internal Error Server"
+            message = "Internal Error Server";
             break;
     }
     res.status(statusCode).json({ message })

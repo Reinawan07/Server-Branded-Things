@@ -101,11 +101,11 @@ Target:
 
   Note: Pastikan password telah terhash sebelum data user masuk ke dalam database.
 
-- [ ] POST /login (semua role, baik admin atau staff)
-  - [ ] Request body: { email, password }
-  - [ ] Response:
-    - [ ] 200: { access_token, email/username, role }
-    - [ ] 401: { error invalid username or email or password }
+- [x] POST /login (semua role, baik admin atau staff)
+  - [x] Request body: { email, password }
+  - [x] Response:
+    - [x] 200: { access_token, email/username, role }
+    - [x] 401: { error invalid username or email or password }
 
 - [ ] Menambahkan Authentication dan Authorization
 
