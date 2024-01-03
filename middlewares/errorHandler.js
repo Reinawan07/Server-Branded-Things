@@ -3,8 +3,9 @@ function errorHandler(error, req, res, next) {
     let statusCode, message
     switch (error.name) {
         case "SequelizeValidationError":
+        case "SequelizeUniqueConstraintError":
             statusCode = 400
-            message = error.errors[0].message
+             message = error.errors[0]?.message || "Email already exists";
             break;
 
         case "NotFound":
