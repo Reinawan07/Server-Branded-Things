@@ -27,13 +27,13 @@ Target:
   - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data todo.
   - [x] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
 
-- [ ] Mengupdate entitas utama (Update/ PUT)
-  - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas utama.
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data yang diupdate.
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
+- [x] Mengupdate entitas utama (Update/ PUT)
+  - [x] Endpoint ini akan menerima request body berdasar field-field di entitas utama.
+  - [x] Id dikirimkan via request params
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data yang diupdate.
+  - [x] Jika request gagal karena data tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
+  - [x] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
+  - [x] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
 
 - [ ] Menghapus entitas utama (Delete / DELETE)
   - [ ] Id dikirimkan via request params

@@ -7,6 +7,7 @@ router.get('/', (req, res) => res.json({message: "Buat Server Branded Things"}))
 router.post('/products', ProductsControllers.CreateProducts)
 router.get('/products', ProductsControllers.ReadProducts)
 router.get('/products/:id', ProductsControllers.ReadProductsById)
+router.put('/products/:id', ProductsControllers.UpdateProducts)
 
 router.use(errorHandler)
 module.exports = router;
