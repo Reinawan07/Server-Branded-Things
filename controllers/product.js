@@ -1,4 +1,4 @@
-const {Product} = require('../models');
+const { Product } = require('../models');
 
 class ProductsControllers {
 
@@ -32,14 +32,27 @@ class ProductsControllers {
         }
     }
 
-    static async UpdateProducts(req, res, next) {
+    static async UpdateProduct(req, res, next) {
         try {
             const data = await Product.findByPk(req.params.id);
             if (!data) {
-                throw ({ name: "NotFound", message: 'Product not found' })
+                throw ({ name: "NotFound", message: `Product Id ${req.params.id} not found` })
             }
-            await Product.update(req.body, {where:{id: req.params.id}})
-            res.status(200).json({message: "Sucsses"});
+            await data.update(req.body, { where: { id: req.params.id } })
+            res.status(200).json({ message: `Success Update Product With Id ${req.params.id}` });
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async DeleteProducts(req, res, next) {
+        try {
+            const data = await Product.findByPk(req.params.id);
+            if (!data) {
+                throw ({ name: "NotFound", message: `Product Id ${req.params.id} not found` })
+            }
+            await data.destroy()
+            res.status(200).json({ message: `Id ${req.params.id} success to delete` });
         } catch (error) {
             next(error)
         }
