@@ -10,6 +10,16 @@ class ProductsControllers {
             next(error)
         }
     }
+
+    static async ReadProducts(req, res, next) {
+        try {
+            const data = await Product.findAll();
+            res.status(200).json(data);
+        } catch (error) {
+            next(error)
+        }
+    }
+
 }
 
 module.exports = ProductsControllers

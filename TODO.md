@@ -18,9 +18,9 @@ Target:
   - [x] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
   - [x] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
 
-- [ ] Mengambil semua data entitas utama (Read / GET)
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama include User sebagai pemilik data (tanpa menampilkan passwordnya).
-  - [ ] Jika request gagal, kembalikan response dengan 500 status code.
+- [x] Mengambil semua data entitas utama (Read / GET)
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama include User sebagai pemilik data (tanpa menampilkan passwordnya).
+  - [x] Jika request gagal, kembalikan response dengan 500 status code.
 
 - [ ]  Mengambil detail entitas utama berdasar id (Read / GET)
   - [ ] Id dikirimkan via request params
