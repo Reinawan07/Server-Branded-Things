@@ -65,10 +65,10 @@ Target:
   - [ ] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found
   - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
 
-- [ ] Mengambil semua data entitas utama (Read / GET) untuk public site
-  - [ ] Tambahkan prefix /pub pada endpoint ini
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama.
-  - [ ] Jika request gagal, kembalikan response dengan 500 status code.
+- [x] Mengambil semua data entitas utama (Read / GET) untuk public site
+  - [x] Tambahkan prefix /pub pada endpoint ini
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama.
+  - [x] Jika request gagal, kembalikan response dengan 500 status code.
 
 - [ ] Mengambil detail entitas utama berdasar id (Read / GET) untuk public site
   - [ ] Tambahkan prefix /pub pada endpoint kalian

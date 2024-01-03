@@ -17,5 +17,8 @@ router.post('/categories', CategoriesControllers.CreateCategories)
 router.get('/categories', CategoriesControllers.ReadCategories)
 router.put('/categories/:id', CategoriesControllers.UpdateCategories)
 
+//Public
+router.get('/pub/products', ProductsControllers.ReadProductsPub)
+
 router.use(errorHandler)
 module.exports = router;

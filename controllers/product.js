@@ -58,6 +58,16 @@ class ProductsControllers {
         }
     }
 
+// Controller public
+    static async ReadProductsPub(req, res, next) {
+        try {
+            const data = await Product.findAll();
+            res.status(200).json(data);
+        } catch (error) {
+            next(error)
+        }
+    }
+
 }
 
 module.exports = ProductsControllers
