@@ -14,7 +14,7 @@ function errorHandler(error, req, res, next) {
 
         default:
             statusCode = 500;
-            message = "Internal error server"
+            message = "Internal Error Server"
             break;
     }
     res.status(statusCode).json({ message })

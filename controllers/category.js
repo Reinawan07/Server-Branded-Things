@@ -19,6 +19,21 @@ class CategoriesControllers {
             next(error)
         }
     }
+
+    static async UpdateCategories(req, res, next) {
+        try {
+            const data = await Category.findByPk(req.params.id)
+
+            if(!data){
+                throw({name: "NotFound", message: `Category id ${req.params.id} not found`})
+            }
+
+            await data.update(req.body, {where: {id: req.params.id}})
+            res.status(201).json({ message: `Success update category id ${req.params.id}` })
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = CategoriesControllers
