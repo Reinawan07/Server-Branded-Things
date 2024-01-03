@@ -10,6 +10,15 @@ class CategoriesControllers {
             next(error)
         }
     }
+
+    static async ReadCategories(req, res, next) {
+        try {
+            const data = await Category.findAll()
+            res.status(201).json(data)
+        } catch (error) {
+            next(error)
+        }
+    }
 }
 
 module.exports = CategoriesControllers

@@ -14,6 +14,7 @@ router.delete('/product/:id', ProductsControllers.DeleteProducts)
 
 //Entitas Kedua
 router.post('/categories', CategoriesControllers.CreateCategories)
+router.get('/categories', CategoriesControllers.ReadCategories)
 
 router.use(errorHandler)
 module.exports = router;

@@ -47,9 +47,9 @@ Target:
   - [x] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan 400 status code dan response body berupa object yang berisikan validation errors.
   - [x] Jika request gagal karena kesalahan server, kembalikan response dengan 500 status code.
 
-- [ ] Mengambil semua data genres/categories/types (Read / GET)
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data genres/categories/types.
-  - [ ] Jika request gagal, kembalikan response dengan 500 status code.
+- [x] Mengambil semua data genres/categories/types (Read / GET)
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data genres/categories/types.
+  - [x] Jika request gagal, kembalikan response dengan 500 status code.
 
 - [ ] Mengupdate kedua genres/categories/types (Update/ PUT)
   - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas kedua genres/categories/types.
