@@ -20,6 +20,18 @@ class ProductsControllers {
         }
     }
 
+    static async ReadProductsById(req, res, next) {
+        try {
+            const data = await Product.findByPk(req.params.id);
+            if (!data) {
+                throw ({ name: "NotFound", message: 'Product not found' })
+            }
+            res.status(200).json(data);
+        } catch (error) {
+            next(error)
+        }
+    }
+
 }
 
 module.exports = ProductsControllers

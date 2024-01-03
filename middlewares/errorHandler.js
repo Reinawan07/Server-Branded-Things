@@ -7,6 +7,11 @@ function errorHandler(error, req, res, next) {
             message = error.errors[0].message
             break;
 
+        case "NotFound":
+            statusCode = 404
+            message = error.message ?? "Data Not Found"
+            break;
+
         default:
             statusCode = 500;
             message = "Internal error server"

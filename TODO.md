@@ -22,10 +22,10 @@ Target:
   - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa array of objects yang berisikan semua data entitas utama include User sebagai pemilik data (tanpa menampilkan passwordnya).
   - [x] Jika request gagal, kembalikan response dengan 500 status code.
 
-- [ ]  Mengambil detail entitas utama berdasar id (Read / GET)
-  - [ ] Id dikirimkan via request params
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data todo.
-  - [ ] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
+- [x]  Mengambil detail entitas utama berdasar id (Read / GET)
+  - [x] Id dikirimkan via request params
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object yang berisikan data todo.
+  - [x] Jika request gagal karena todo tidak ditemukan, kembalikan response dengan 404 status code dan response body berupa object yang berisikan error not found.
 
 - [ ] Mengupdate entitas utama (Update/ PUT)
   - [ ] Endpoint ini akan menerima request body berdasar field-field di entitas utama.
