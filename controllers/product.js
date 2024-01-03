@@ -4,7 +4,7 @@ class ProductsControllers {
 
     static async CreateProducts(req, res, next) {
         try {
-            const data = await Product.create({ ...req.body });
+            const data = await Product.create({ ...req.body, authorId: req.user.id });
             res.status(201).json(data);
         } catch (error) {
             next(error)
