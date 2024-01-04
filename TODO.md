@@ -225,11 +225,11 @@ Mengimplementasikan testing terhadap endpoint yang sudah dibuat
 
 Mengimplementasikan sorting, pagination dan filter pada aplikasi server yang sudah dibuat
 
-- [ ] Get list entitas utama pada Public Site
-  - [ ] Search menggunakan title/name Entitas Utama
-  - [ ] Sorting berdasarkan data terbaru/terlama (ASC/DESC)
-  - [ ] Filter Entitas Utama berdasarkan Entitas Kedua (genres/categories/types)
-  - [ ] Pagination dengan limit data per page berjumlah 10
+- [x] Get list entitas utama pada Public Site
+  - [x] Search menggunakan title/name Entitas Utama
+  - [x] Sorting berdasarkan data terbaru/terlama (ASC/DESC)
+  - [x] Filter Entitas Utama berdasarkan Entitas Kedua (genres/categories/types)
+  - [x] Pagination dengan limit data per page berjumlah 10
 
 ## **W1D4 & W1D6**
 
