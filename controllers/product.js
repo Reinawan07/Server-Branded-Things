@@ -91,58 +91,62 @@ class ProductsControllers {
         }
     }
 
-    // Controller public
     static async ReadProductsPub(req, res, next) {
         try {
-            const { filter, date, search } = req.query;
-            let option = { 
-                where: {}, 
-                order: [],
-                include: {
-                    model: Category,
-                    attributes: [`name`]
-                }
+          const { filter, date, search } = req.query;
+    
+          let option = {
+            include: {
+              model: Category,
+              attributes: ['name'],
+            },
+            order: [],
+          };
+    
+          // Filter
+          if (filter && filter.categoryId) {
+            const categoryIds = filter.categoryId.split(',').map(el => +el);
+            option.where = {
+              categoryId: {
+                [Op.or]: categoryIds,
+              },
             };
-
-            if (filter) {
-                if (filter.categoryId === '') {
-                    throw { name: 'invalidValue'};
-                } else if (!Number(filter.categoryId)) {
-                    throw { name: 'invalidValue'};
-                } else {
-                    let data = filter.categoryId.split(',').map(el => +el);
-                    option.where.categoryId = {
-                        [Op.or]: data
-                    };
-                }
-            }
-
-            if (search) {
-                option.where = {
-                    name: { [Op.iLike]: `%${search}%` },
-                };
-            }
-
-            if (date) {
-                option.order = [["createdAt", date === "new" ? "DESC" : "ASC"]];
-            }
-
-            if (
-                typeof +req.query.page !== "number" ||
-                typeof +req.query.size !== "number"
-            ) {
-                throw { name: "InvalidParams" };
-            }
-            if (req.query.page) {
-                option.limit = req.query.size || 10;
-                option.offset = (req.query.page - 1) * option.limit;
-            }
-            const data = await Product.findAll(option);
-            res.status(200).json(data);
-        } catch (error) {
-            next(error)
+          }
+    
+          //Search 
+          if (search) {
+            option.where = {
+              ...option.where,
+              name: {
+                [Op.iLike]: `%${search}%`,
+              },
+            };
+          }
+    
+          // Sort
+          if (date) {
+            option.order.push(['createdAt', date === 'new' ? 'DESC' : 'ASC']);
+          }
+    
+          // Pagination
+          if (
+            typeof +req.query.page !== "number" ||
+            typeof +req.query.size !== "number"
+        ) {
+            throw { name: "InvalidParams" };
         }
-    }
+        if (req.query.page) {
+            option.limit = req.query.size || 10;
+            option.offset = (req.query.page - 1) * option.limit;
+        }
+    
+          const data = await Product.findAll(option);
+    
+          res.status(200).json(data);
+        } catch (error) {
+          next(error);
+        }
+      }
 
     static async ReadProductsByIdPub(req, res, next) {
         try {
