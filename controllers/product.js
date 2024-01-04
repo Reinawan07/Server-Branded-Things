@@ -3,9 +3,9 @@ const cloudinary = require('cloudinary').v2;
 const { randomUUID } = require('crypto');
           
 cloudinary.config({ 
-  cloud_name: 'deh8z9bc2', 
-  api_key: '319925632225391', 
-  api_secret: 'sAgogFZaMcg-u17pPE9Z7g8PKkM' 
+  cloud_name: process.env.cloud_name, 
+  api_key: process.env.api_key, 
+  api_secret: process.env.api_secret 
 });
 
 class ProductsControllers {
