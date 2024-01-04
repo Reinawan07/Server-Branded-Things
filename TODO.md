@@ -107,15 +107,15 @@ Target:
     - [x] 200: { access_token, email/username, role }
     - [x] 401: { error invalid username or email or password }
 
-- [ ] Menambahkan Authentication dan Authorization
+- [x] Menambahkan Authentication dan Authorization
 
 | Role  | Create | Read  | Update                             | Delete                             |
 | ----- | ------ | ----- | ---------------------------------- | ---------------------------------- |
-| Admin | [ ] ✅  | [ ] ✅ | [ ] ✅                              | [ ] ✅                              |
-| Staff | [ ]  ✅ | [ ] ✅ | [ ] Hanya bisa menghapus miliknya. | [ ] Hanya bisa menghapus miliknya. |
+| Admin | [x] ✅  | [x] ✅ | [x] ✅                              | [x] ✅                              |
+| Staff | [x]  ✅ | [x] ✅ | [x] Hanya bisa menghapus miliknya. | [x] Hanya bisa menghapus miliknya. |
 
-- [ ] Error status code 401, apabila user yang belum login, atau yang mempunyai token yang salah mencoba mengakses endpoint CRD.
-- [ ] Error status code 403, apabila staff mengakses delete pada entitas yang bukan miliknya.
+- [x] Error status code 401, apabila user yang belum login, atau yang mempunyai token yang salah mencoba mengakses endpoint CRD.
+- [x] Error status code 403, apabila staff mengakses delete pada entitas yang bukan miliknya.
 
   Note: Untuk mengirim access_token, gunakan request header (diterima sebagai req.headers di Express).
 
@@ -130,14 +130,14 @@ Target:
 
 ### **Upload File**
 
-- [ ] Meng-update data imgUrl entitas utama (Update / PATCH)
-  - [ ] Endpoint ini akan menerima request body berupa ("multipart/form-data") untuk meng-update data imgUrl.
-  - [ ] Id dikirimkan via request params.
-  - [ ] Membuat fitur upload menggunakan [multer](https://www.npmjs.com/package/multer) dan [imageKit](https://imagekit.io/)/[Cloudinary](https://cloudinary.com) untuk menyimpan file tersebut.
-  - [ ] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object message: 'Image [entity name] success to update'
-  - [ ] Jika request gagal karena data tidak ditemukan, kembalikan response dengan status code 404 dan response body berupa object yang berisikan error not found.
-  - [ ] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan status code 400 dan response body berupa object yang berisikan validation errors.
-  - [ ] Jika request gagal karena kesalahan server, kembalikan response dengan status code 500.
+- [x] Meng-update data imgUrl entitas utama (Update / PATCH)
+  - [x] Endpoint ini akan menerima request body berupa ("multipart/form-data") untuk meng-update data imgUrl.
+  - [x] Id dikirimkan via request params.
+  - [x] Membuat fitur upload menggunakan [multer](https://www.npmjs.com/package/multer) dan [imageKit](https://imagekit.io/)/[Cloudinary](https://cloudinary.com) untuk menyimpan file tersebut.
+  - [x] Jika request berhasil, kembalikan response dengan 200 status code dan response body berupa object message: 'Image [entity name] success to update'
+  - [x] Jika request gagal karena data tidak ditemukan, kembalikan response dengan status code 404 dan response body berupa object yang berisikan error not found.
+  - [x] Jika request gagal karena validasi tidak terpenuhi, kembalikan response dengan status code 400 dan response body berupa object yang berisikan validation errors.
+  - [x] Jika request gagal karena kesalahan server, kembalikan response dengan status code 500.
 
 ## **W1D3**
 

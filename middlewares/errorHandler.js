@@ -5,6 +5,7 @@ function errorHandler(error, req, res, next) {
         case "SequelizeValidationError":
         case "SequelizeUniqueConstraintError":
             statusCode = 400
+            // message = error.errors[0].message;
             message = error.errors[0]?.message || "Email already exists";
             break;
 

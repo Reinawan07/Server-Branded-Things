@@ -6,6 +6,11 @@ const authentication = require('../middlewares/authentication');
 const { authorizationAdminOnly, authorizationProduct, authorizationCategory } = require('../middlewares/authorization');
 const errorHandler = require('../middlewares/errorHandler');
 
+const multer  = require('multer')
+
+const storage = multer.memoryStorage()
+const upload = multer({ storage })
+
 router.get('/', (req, res) => res.json({message: "Buat Server Branded Things"}));
 
 
@@ -26,6 +31,7 @@ router.get('/products', ProductsControllers.ReadProducts)
 router.get('/products/:id', ProductsControllers.ReadProductsById)
 router.put('/product/:id', authorizationProduct,ProductsControllers.UpdateProduct)
 router.delete('/product/:id', authorizationProduct,ProductsControllers.DeleteProducts)
+router.patch('/product/:id/imgurl', authorizationProduct, upload.single('imgUrl'), ProductsControllers.UpdateImgUrl);
 
 //Entitas Kedua
 router.post('/categories', CategoriesControllers.CreateCategories)
