@@ -121,12 +121,12 @@ Target:
 
 ### **Error Handler**
 
-- [ ] 401 - Error login user not found atau password not matched
-- [ ] 401 - Error authentication
-- [ ] 403 - Forbidden error di authorization
-- [ ] 400 - Error validation saat create.
-- [ ] 404 - Data not found.
-- [ ] 500 - Internal error server, dsb
+- [x] 401 - Error login user not found atau password not matched
+- [x] 401 - Error authentication
+- [x] 403 - Forbidden error di authorization
+- [x] 400 - Error validation saat create.
+- [x] 404 - Data not found.
+- [x] 500 - Internal error server, dsb
 
 ### **Upload File**
 

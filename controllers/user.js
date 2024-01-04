@@ -30,13 +30,11 @@ class UsersControllers {
             const { email, password } = req.body
 
             if (!email) {
-                res.status(400).json({ message: "Email is missing" })
-                return;
+                throw({ name: "Email is missing" })
             }
 
             if (!password) {
-                res.status(400).json({ message: "Password is missing" })
-                return;
+                throw({ name: "Password is missing" })
             }
 
             const user = await User.findOne({ where: { email } })
