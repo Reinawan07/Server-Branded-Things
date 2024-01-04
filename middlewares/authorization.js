@@ -32,19 +32,15 @@ async function authorizationCategory(req, res, next) {
 
 const authorizationAdminOnly = async (req, res, next) => {
     try {
-      const userId = req.user.id;
-      
-      const user = await User.findByPk(userId);
-  
-      if (user && user.role === 'admin') {
-        next();
-      } else {
-        throw {name: "AdminOnly"}
-      }
+        if (req.user.role === 'admin') {
+            next()
+        } else {
+            throw { name: "AdminOnly" }
+        }
     } catch (error) {
-      next(error);
+        next(error);
     }
-  };
+};
 
 
-module.exports = {authorizationProduct, authorizationCategory, authorizationAdminOnly};
+module.exports = { authorizationProduct, authorizationCategory, authorizationAdminOnly };
