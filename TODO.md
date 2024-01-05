@@ -147,23 +147,23 @@ Target:
 
 Mengimplementasikan testing terhadap endpoint yang sudah dibuat
 
-- [ ] Login (Admin), perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Email tidak diberikan / tidak diinput
-  - [ ] Password tidak diberikan / tidak diinput
-  - [ ] Email diberikan invalid / tidak terdaftar
-  - [ ] Password diberikan salah / tidak match
+- [x] Login (Admin), perlu melakukan pengecekan pada status dan response ketika:
+  - [x] Email tidak diberikan / tidak diinput
+  - [x] Password tidak diberikan / tidak diinput
+  - [x] Email diberikan invalid / tidak terdaftar
+  - [x] Password diberikan salah / tidak match
   - Pastikan untuk testing ini sediakan dulu data Admin
 
-- [ ] Add Staff, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil register
-  - [ ] Email tidak diberikan / tidak diinput
-  - [ ] Password tidak diberikan / tidak diinput
-  - [ ] Email diberikan string kosong
-  - [ ] Password diberikan string kosong
-  - [ ] Email sudah terdaftar
-  - [ ] Format Email salah / invalid
-  - [ ] Gagal register staff karena admin belum login
-  - [ ] Gagal register staff karena token yang diberikan tidak valid (random string)
+- [x] Add Staff, perlu melakukan pengecekan pada status dan response ketika:
+  - [x] Berhasil register
+  - [x] Email tidak diberikan / tidak diinput
+  - [x] Password tidak diberikan / tidak diinput
+  - [x] Email diberikan string kosong
+  - [x] Password diberikan string kosong
+  - [x] Email sudah terdaftar
+  - [x] Format Email salah / invalid
+  - [x] Gagal register staff karena admin belum login
+  - [x] Gagal register staff karena token yang diberikan tidak valid (random string)
 
 - [ ] Create, perlu melakukan pengecekan pada status dan response ketika:
   - [ ] Berhasil membuat entitas utama

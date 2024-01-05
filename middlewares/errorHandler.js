@@ -25,6 +25,7 @@ function errorHandler(error, req, res, next) {
             break;
 
         case "Unauthenticated":
+        case "JsonWebTokenError":
             statusCode = 401
             message = "Unauthenticated";
             break;
