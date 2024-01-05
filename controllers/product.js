@@ -33,7 +33,7 @@ class ProductsControllers {
         try {
             const data = await Product.findByPk(req.params.id);
             if (!data) {
-                throw ({ name: "NotFound", message: `Product id ${req.params.id} not found` })
+                throw ({ name: "NotFound", message: `Product not found` })
             }
             res.status(200).json(data);
         } catch (error) {
