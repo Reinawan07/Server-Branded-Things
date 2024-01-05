@@ -172,10 +172,10 @@ Mengimplementasikan testing terhadap endpoint yang sudah dibuat
   - [x] Gagal ketika request body tidak sesuai (validation required)
   - Buatlah testing untuk masing-masing fitur
 
-- [ ] Read, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan data Entitas Utama
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
+- [x] Read, perlu melakukan pengecekan pada status dan response ketika:
+  - [x] Berhasil mendapatkan data Entitas Utama
+  - [x] Gagal menjalankan fitur karena belum login
+  - [x] Gagal menjalankan fitur karena token yang diberikan tidak valid
 
 - [ ] Read Detail, perlu melakukan pengecekan pada status dan response ketika:
   - [ ] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
