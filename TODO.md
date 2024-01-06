@@ -217,9 +217,9 @@ Mengimplementasikan testing terhadap endpoint yang sudah dibuat
   - [x] Berhasil mendapatkan  Entitas Utama serta panjang yang sesuai ketika memberikan page tertentu (cek pagination-nya)
   - Pastikan untuk testing ini sediakan dulu sekitar 20 data untuk diinput di beforeAll, sehingga kita bisa melakukan ekspektasi pada data dan jumlahnya yang kita dapat ketika filter dan pagination
 
-- [ ] Endpoint  Detail pada public site,  perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
-  - [ ] Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
+- [x] Endpoint  Detail pada public site,  perlu melakukan pengecekan pada status dan response ketika:
+  - [x] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
+  - [x] Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
 
 ### **Sorting and Pagination, Filter**
 
