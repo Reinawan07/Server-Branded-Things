@@ -198,13 +198,13 @@ Mengimplementasikan testing terhadap endpoint yang sudah dibuat
   - [x] Gagal karena id entity yang dikirim tidak terdapat di database
   - [x] Gagal menjalankan fitur ketika Staff menghapus entity yang bukan miliknya
 
-- [ ] Update PATCH, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mengupdate imgUrl Entitas Utama berdasarkan params id yang diberikan
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
-  - [ ] Gaga menjalankan fiturl karena id entity yang dikirim tidak terdapat di database
-  - [ ] Gagal menjalankan fitur ketika Staff mengolah data entity yang bukan miliknya
-  - [ ] Gagal ketika request body yang diberikan tidak sesuai
+- [x] Update PATCH, perlu melakukan pengecekan pada status dan response ketika:
+  - [x] Berhasil mengupdate imgUrl Entitas Utama berdasarkan params id yang diberikan
+  - [x] Gagal menjalankan fitur karena belum login
+  - [x] Gagal menjalankan fitur karena token yang diberikan tidak valid
+  - [x] Gaga menjalankan fiturl karena id entity yang dikirim tidak terdapat di database
+  - [x] Gagal menjalankan fitur ketika Staff mengolah data entity yang bukan miliknya
+  - [x] Gagal ketika request body yang diberikan tidak sesuai
 
 - [x] Read  Entitas kedua data genres/categories/types  perlu melakukan pengecekan pada status dan response ketika:
   - [x] Berhasil mendapatkan data entitas kedua

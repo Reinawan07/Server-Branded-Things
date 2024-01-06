@@ -19,6 +19,11 @@ function errorHandler(error, req, res, next) {
             message = "Password is missing";
             break;
 
+        case "ImgIsRequired":
+            statusCode = 400
+            message = "Img is missing";
+            break;
+
         case "Invalid email/password":
             statusCode = 401
             message = "Invalid email/password";

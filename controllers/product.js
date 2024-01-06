@@ -95,6 +95,9 @@ class ProductsControllers {
             if (!product) {
                 throw ({ name: "NotFound", message: `Product ${req.params.id} not found` })
             }
+            if (!req.file) {
+                throw { name: "ImgIsRequired" };
+            }
 
             const base64 = Buffer.from(req.file.buffer).toString('base64');
             const dataURI = `data:${req.file.mimetype};base64,${base64}`
