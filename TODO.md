@@ -177,11 +177,11 @@ Mengimplementasikan testing terhadap endpoint yang sudah dibuat
   - [x] Gagal menjalankan fitur karena belum login
   - [x] Gagal menjalankan fitur karena token yang diberikan tidak valid
 
-- [ ] Read Detail, perlu melakukan pengecekan pada status dan response ketika:
-  - [ ] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
-  - [ ] Gagal menjalankan fitur karena belum login
-  - [ ] Gagal menjalankan fitur karena token yang diberikan tidak valid
-  - [ ] Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
+- [x] Read Detail, perlu melakukan pengecekan pada status dan response ketika:
+  - [x] Berhasil mendapatkan 1  Entitas Utama sesuai dengan params id yang diberikan
+  - [x] Gagal menjalankan fitur karena belum login
+  - [x] Gagal menjalankan fitur karena token yang diberikan tidak valid
+  - [x] Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
 
 - [ ] Update PUT, perlu melakukan pengecekan pada status dan response ketika:
   - [ ] Berhasil mengupdate data Entitas Utama berdasarkan params id yang diberikan

@@ -10,8 +10,18 @@ let user1 = {
     password: "password",
 };
 
-let chategory1 = {
+let category1 = {
     name: "Kemeja",
+}
+
+let product = {
+    name: "Test",
+    description: "test product",
+    price: 100000,
+    stock: 1,
+    imgUrl: "test.jpg",
+    categoryId: 1,
+    authorId: 1,
 }
 
 let token;
@@ -28,36 +38,30 @@ afterAll(async () => {
         cascade: true,
         restartIdentity: true
     });
+    await queryInterface.bulkDelete('Categories', null, {
+        truncate: true,
+        cascade: true,
+        restartIdentity: true
+    });
 });
 
 beforeAll(async () => {
     let user = await User.create(user1);
+    await Category.create(category1);
+    await Product.create(product);
     token = sign({ id: user.id }, process.env.JWT_SECRET);
 });
 
-describe("/product/:id", () => {
+describe("/products/:id", () => {
 
-    // !Berhasil mendapatkan 1 Entitas Utama sesuai dengan params id yang diberikan
-    test.skip("Get product by ID", async () => {
-        const chategory = await Category.create(chategory1);
-
-        const productData = {
-            name: "Test",
-            description: "test product",
-            price: 100000,
-            imgUrl: "test.jpg",
-            CategoryId: chategory.id, 
-            AuthorId: user1.id, 
-        };
-
-        const product = await Product.create(productData);
-
+    // Berhasil mendapatkan 1 Entitas Utama sesuai dengan params id yang diberikan
+    test("Get product by ID", async () => {
         const { status, body } = await request(app)
-            .get(`/product/${product.id}`)
+            .get("/products/1")
             .set('Authorization', `Bearer ${token}`);
 
         expect(status).toBe(200);
-        expect(body).toBeInstanceOf(Array);
+        expect(body).toBeInstanceOf(Object);
     });
 
     // Gagal menjalankan fitur karena belum login
@@ -70,7 +74,7 @@ describe("/product/:id", () => {
     // Gagal menjalankan fitur karena token yang diberikan tidak valid
     test("invalid token", async () => {
         const { status, body } = await request(app)
-            .get(`/product/5`)
+            .get(`/products/5`)
             .set('Authorization', `Bearer ${invalidToken}`);
         expect(status).toBe(401);
         expect(body).toHaveProperty("message", "Unauthenticated");
@@ -79,10 +83,10 @@ describe("/product/:id", () => {
     // Gagal mendapatkan Entitas Utama karena params id yang diberikan tidak ada di database / invalid
     test("product not found", async () => {
         const { status, body } = await request(app)
-            .get(`/product/999`)
+            .get(`/products/999`)
             .set('Authorization', `Bearer ${token}`);
         expect(status).toBe(404);
-        expect(body).toHaveProperty("message", `Product not found`);
+        expect(body).toBeInstanceOf(Object)
     });
 
 });

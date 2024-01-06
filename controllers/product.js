@@ -1,12 +1,12 @@
 const { Op } = require('sequelize');
-const { Product, Category } = require('../models');
+const { Product, Category, User } = require('../models');
 const cloudinary = require('cloudinary').v2;
 const { randomUUID } = require('crypto');
-          
-cloudinary.config({ 
-  cloud_name: process.env.cloud_name, 
-  api_key: process.env.api_key, 
-  api_secret: process.env.api_secret 
+
+cloudinary.config({
+    cloud_name: process.env.cloud_name,
+    api_key: process.env.api_key,
+    api_secret: process.env.api_secret
 });
 
 class ProductsControllers {
@@ -21,17 +21,38 @@ class ProductsControllers {
     }
 
     static async ReadProducts(req, res, next) {
-        try {
-            const data = await Product.findAll();
-            res.status(200).json(data);
-        } catch (error) {
-            next(error)
-        }
+    try {
+        const data = await Product.findAll({
+            include: [{
+                model: Category,
+            },
+            {
+                model: User,
+                attributes: {
+                    exclude: ['password']
+                }
+            }]
+        });
+        res.status(200).json(data);
+    } catch (error) {
+        next(error);
     }
+}
+
 
     static async ReadProductsById(req, res, next) {
         try {
-            const data = await Product.findByPk(req.params.id);
+            const data = await Product.findByPk(req.params.id,{
+                include: [{
+                    model: Category,
+                },
+                {
+                    model: User,
+                    attributes: {
+                        exclude: ['password']
+                    }
+                }]
+            });
             if (!data) {
                 throw ({ name: "NotFound", message: `Product not found` })
             }
@@ -67,12 +88,12 @@ class ProductsControllers {
         }
     }
 
-    static async UpdateImgUrl(req,res,next){
+    static async UpdateImgUrl(req, res, next) {
         try {
             const product = await Product.findByPk(req.params.id);
 
             if (!product) {
-                throw({ name: "NotFound", message: `Product ${req.params.id} not found` })
+                throw ({ name: "NotFound", message: `Product ${req.params.id} not found` })
             }
 
             const base64 = Buffer.from(req.file.buffer).toString('base64');
@@ -93,64 +114,79 @@ class ProductsControllers {
 
     static async ReadProductsPub(req, res, next) {
         try {
-          const { filter, date, search } = req.query;
-    
-          let option = {
-            include: {
-              model: Category,
-              attributes: ['name'],
-            },
-            order: [],
-          };
-    
-          // Filter
-          if (filter && filter.categoryId) {
-            const categoryIds = filter.categoryId.split(',').map(el => +el);
-            option.where = {
-              categoryId: {
-                [Op.or]: categoryIds,
-              },
+            const { filter, date, search } = req.query;
+
+            let option = {
+                include: [{
+                    model: Category,
+                },
+                {
+                    model: User,
+                    attributes: {
+                        exclude: ['password']
+                    }
+                }],
+                order: [],
             };
-          }
-    
-          //Search 
-          if (search) {
-            option.where = {
-              ...option.where,
-              name: {
-                [Op.iLike]: `%${search}%`,
-              },
-            };
-          }
-    
-          // Sort
-          if (date) {
-            option.order.push(['createdAt', date === 'new' ? 'DESC' : 'ASC']);
-          }
-    
-          // Pagination
-          if (
-            typeof +req.query.page !== "number" ||
-            typeof +req.query.size !== "number"
-        ) {
-            throw { name: "InvalidParams" };
-        }
-        if (req.query.page) {
-            option.limit = req.query.size || 10;
-            option.offset = (req.query.page - 1) * option.limit;
-        }
-    
-          const data = await Product.findAll(option);
-    
-          res.status(200).json(data);
+
+            // Filter
+            if (filter && filter.categoryId) {
+                const categoryIds = filter.categoryId.split(',').map(el => +el);
+                option.where = {
+                    categoryId: {
+                        [Op.or]: categoryIds,
+                    },
+                };
+            }
+
+            //Search 
+            if (search) {
+                option.where = {
+                    ...option.where,
+                    name: {
+                        [Op.iLike]: `%${search}%`,
+                    },
+                };
+            }
+
+            // Sort
+            if (date) {
+                option.order.push(['createdAt', date === 'new' ? 'DESC' : 'ASC']);
+            }
+
+            // Pagination
+            if (
+                typeof +req.query.page !== "number" ||
+                typeof +req.query.size !== "number"
+            ) {
+                throw { name: "InvalidParams" };
+            }
+            if (req.query.page) {
+                option.limit = req.query.size || 10;
+                option.offset = (req.query.page - 1) * option.limit;
+            }
+
+            const data = await Product.findAll(option);
+
+            res.status(200).json(data);
         } catch (error) {
-          next(error);
+            next(error);
         }
-      }
+    }
 
     static async ReadProductsByIdPub(req, res, next) {
         try {
-            const data = await Product.findByPk(req.params.id);
+            const data = await Product.findByPk(req.params.id, {
+                include: [{
+                    model: Category,
+                },
+                {
+                    model: User,
+                    attributes: {
+                        exclude: ['password']
+                    }
+                }]
+            });
             if (!data) {
                 throw ({ name: "NotFound", message: `Product id ${req.params.id} not found` })
             }
