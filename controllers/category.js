@@ -14,7 +14,7 @@ class CategoriesControllers {
     static async ReadCategories(req, res, next) {
         try {
             const data = await Category.findAll()
-            res.status(201).json(data)
+            res.status(200).json(data)
         } catch (error) {
             next(error)
         }
