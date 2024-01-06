@@ -47,12 +47,12 @@ describe("/add-user", () => {
             .set(`Authorization`, `Bearer ${token}`)
             .send(staff);
 
-            expect(status).toBe(201);
-            expect(body).toBeInstanceOf(Object); // 2. 
-            expect(body).toHaveProperty("id", expect.any(Number));
-            expect(body).toHaveProperty("email", expect.any(String));
-            expect(body).toHaveProperty("phoneNumber", expect.any(String));
-            expect(body).toHaveProperty("address", expect.any(String));
+        expect(status).toBe(201);
+        expect(body).toBeInstanceOf(Object);
+        expect(body).toHaveProperty("id", expect.any(Number));
+        expect(body).toHaveProperty("email", expect.any(String));
+        expect(body).toHaveProperty("phoneNumber", expect.any(String));
+        expect(body).toHaveProperty("address", expect.any(String));
     });
 
     // Email tidak diberikan / tidak diinput
@@ -69,6 +69,7 @@ describe("/add-user", () => {
             });
 
         expect(status).toBe(400);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Email is required");
     });
 
@@ -86,6 +87,7 @@ describe("/add-user", () => {
             });
 
         expect(status).toBe(400);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Password is required");
     });
 
@@ -104,6 +106,7 @@ describe("/add-user", () => {
             });
 
         expect(status).toBe(400);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Email is required");
     });
 
@@ -122,6 +125,7 @@ describe("/add-user", () => {
             });
 
         expect(status).toBe(400);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Password is required");
     });
 
@@ -131,10 +135,11 @@ describe("/add-user", () => {
             .post('/add-user')
             .set(`Authorization`, `Bearer ${token}`)
             .send(staff);
-            expect(status).toBe(400)
-            expect(body).toBeInstanceOf(Object)
-            expect(body.message).toContain("Email already exists")
-       });
+
+        expect(status).toBe(400)
+        expect(body).toBeInstanceOf(Object)
+        expect(body.message).toContain("Email already exists")
+    });
 
     // Format Email salah / invalid
     test("Format Email salah / invalid", async () => {
@@ -142,20 +147,22 @@ describe("/add-user", () => {
             .post('/add-user')
             .set(`Authorization`, `Bearer ${token}`)
             .send({
-                username:`staff`,
+                username: `staff`,
                 email: `staffgmail.com`,
                 password: `halo123`
             })
-            expect(status).toBe(400)
-            expect(body).toBeInstanceOf(Object)
-            expect(body.message).toContain("Must be in email format")
-       });
+
+        expect(status).toBe(400)
+        expect(body).toBeInstanceOf(Object)
+        expect(body.message).toContain("Must be in email format")
+    });
 
     //Gagal register staff karena admin belum login
     test(`failed access_token (401)`, async () => {
-        let {status, body} = await request(app)
+        let { status, body } = await request(app)
             .post(`/add-user`)
             .send(staff)
+
         expect(status).toBe(401)
         expect(body).toBeInstanceOf(Object)
         expect(body).toHaveProperty("message", "Unauthenticated")
@@ -163,10 +170,11 @@ describe("/add-user", () => {
 
     // Gagal register staff karena token yang diberikan tidak valid (random string)
     test(`invalid access_token (401)`, async () => {
-        let {status, body} = await request(app)
+        let { status, body } = await request(app)
             .post(`/add-user`)
             .set(`Authorization`, `Bearer ${invalidToken}`)
             .send(staff)
+
         expect(status).toBe(401)
         expect(body).toBeInstanceOf(Object)
         expect(body).toHaveProperty("message", "Unauthenticated")

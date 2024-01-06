@@ -54,7 +54,7 @@ class ProductsControllers {
                 }]
             });
             if (!data) {
-                throw ({ name: "NotFound", message: `Product not found` })
+                throw ({ name: "NotFound", message: `Product id ${req.params.id} not found` })
             }
             res.status(200).json(data);
         } catch (error) {

@@ -37,6 +37,7 @@ describe("Login (Admin)", () => {
             });
 
         expect(status).toBe(400);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Email is missing");
     });
 
@@ -49,6 +50,7 @@ describe("Login (Admin)", () => {
             });
 
         expect(status).toBe(400);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Password is missing");
     });
 
@@ -62,6 +64,7 @@ describe("Login (Admin)", () => {
             });
 
         expect(status).toBe(401);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Invalid email/password");
     });
 
@@ -75,6 +78,7 @@ describe("Login (Admin)", () => {
             });
 
         expect(status).toBe(401);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("message", "Invalid email/password");
     });
 
@@ -85,6 +89,7 @@ describe("Login (Admin)", () => {
             .send(admin);
 
         expect(status).toBe(200);
+        expect(body).toBeInstanceOf(Object);
         expect(body).toHaveProperty("access_token", expect.any(String));
     });
 });
