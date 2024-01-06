@@ -4,14 +4,21 @@ const { sequelize, User, Product, Category } = require('../../models');
 let { queryInterface } = sequelize;
 const { sign } = require('jsonwebtoken');
 
-let user1 = {
-    username: "user1",
-    email: "user1@gmail.com",
+let adminUser = {
+    username: "admin",
+    email: "admin@gmail.com",
     password: "password",
+    role: "admin"
+};
+let staffUser = {
+    username: "admin",
+    email: "staff@gmail.com",
+    password: "password",
+    role: "staff"
 };
 
 let category1 = {
-    name: "Kemeja",
+    name: "Kemeja"
 }
 
 let product = {
@@ -23,8 +30,18 @@ let product = {
     categoryId: 1,
     authorId: 1,
 }
+let product2 = {
+    name: "Test",
+    description: "test product",
+    price: 100000,
+    stock: 1,
+    imgUrl: "test.jpg",
+    categoryId: 1,
+    authorId: 1,
+}
 
-let token;
+let tokenAdmin;
+let tokenStaff;
 let invalidToken = "JhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjk5MDIyODg5fQ.0alPGFcBaD-LHcUZY60f6DtCwmZgdfGc5o8bqdKd8mg";
 
 afterAll(async () => {
@@ -46,10 +63,15 @@ afterAll(async () => {
 });
 
 beforeAll(async () => {
-    let user = await User.create(user1);
+    let admin = await User.create(adminUser);
+    let staff = await User.create(staffUser);
+
     await Category.create(category1);
     await Product.create(product);
-    token = sign({ id: user.id }, process.env.JWT_SECRET);
+    await Product.create(product2);
+
+    tokenAdmin = sign({ id: admin.id }, process.env.JWT_SECRET);
+    tokenStaff = sign({ id: staff.id }, process.env.JWT_SECRET);
 });
 
 describe("/product/:id", () => {
@@ -69,7 +91,7 @@ describe("/product/:id", () => {
         const { status, body } = await request(app)
             .put(`/product/1`)
             .send(productData)
-            .set('Authorization', `Bearer ${token}`);
+            .set('Authorization', `Bearer ${tokenAdmin}`);
         expect(status).toBe(200);
         expect(body).toBeInstanceOf(Object);
 
@@ -133,7 +155,7 @@ describe("/product/:id", () => {
         const { status, body } = await request(app)
             .put(`/product/999`)
             .send(productData)
-            .set('Authorization', `Bearer ${token}`);
+            .set('Authorization', `Bearer ${tokenAdmin}`);
 
         expect(status).toBe(404);
         expect(body).toBeInstanceOf(Object);
@@ -141,16 +163,7 @@ describe("/product/:id", () => {
     });
 
     // Gagal menjalankan fitur ketika Staff mengolah data entity yang bukan miliknya
-    test.skip("Forbidden Error", async () => {
-         const user = { 
-            "email": "staff@gmail.com",
-            "password": "password",
-        }
-        const login = await request(app)
-        .post("/login")
-        .send(user) 
-
-        tokenStaff = login.body.token
+    test("Forbidden Error", async () => {
 
         const productData = {
             name: "Designer Polo Shirt",
@@ -187,7 +200,7 @@ describe("/product/:id", () => {
         const { status, body } = await request(app)
             .put(`/product/1`)
             .send(productData)
-            .set('Authorization', `Bearer ${token}`);
+            .set('Authorization', `Bearer ${tokenAdmin}`);
 
         expect(status).toBe(400);
         expect(body).toBeInstanceOf(Object)
